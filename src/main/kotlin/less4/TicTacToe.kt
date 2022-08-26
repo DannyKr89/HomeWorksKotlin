@@ -110,35 +110,35 @@ fun winY(symb: Char): Boolean {
 
 
 fun diagD(symb: Char): Boolean {
-    var win = 0;
+    var win = 0
     for (i in 0 until size) {
-        var j = i
+        val j = i
         if (map[i][j] == symb) {
-            win++;
+            win++
             if (win == winSize) {
-                return true;
+                return true
             }
         } else {
-            win = 0;
+            win = 0
         }
     }
-    return false;
+    return false
 }
 
 fun diagU(symb: Char): Boolean {
-    var win = 0;
+    var win = 0
     for (i in 0 until size) {
-        var j = size - 1 - i
+        val j = size - 1 - i
         if (map[i][j] == symb) {
-            win++;
+            win++
             if (win == winSize) {
-                return true;
+                return true
             }
         } else {
-            win = 0;
+            win = 0
         }
     }
-    return false;
+    return false
 }
 
 
@@ -178,20 +178,20 @@ fun yourTurn() {
 }
 
 fun rowAndColIsValid(row: Int?, col: Int?, symb: Char): Boolean {
-    if (symb == X) {
+    return if (symb == X) {
         if (row!! >= 0 && row < size && col!! >= 0 && col < size) {
             if (map[row][col] == SPACE) {
-                return true
+                true
             } else {
                 println("This cell is no empty!")
-                return false
+                false
             }
         } else {
             println("Input from 1 to 3")
-            return false
+            false
         }
     } else {
-        return row!! >= 0 && row < size && col!! >= 0 && col < size && map[row][col] == SPACE
+        row!! >= 0 && row < size && col!! >= 0 && col < size && map[row][col] == SPACE
     }
 
 }

@@ -26,13 +26,11 @@ fun printColor() {
         println("yellow")
     else if (value > 100)
         println("green")
+
 }
 
 fun compareNumbers() {
     val a = 20
     val b = 20
-    if (a >= b)
-        println("a >= b")
-    else
-        println("a < b")
+    if (a >= b) println("a >= b") else println("a < b")
 }

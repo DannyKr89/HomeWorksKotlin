@@ -24,11 +24,7 @@ fun firstHomeWork(a: Int, b: Int) {
     println()
 }
 
-fun secondHomeWork(a: Int) =
-    if (a >= 0)
-        println("Number is positive")
-    else
-        println("Number is negative")
+fun secondHomeWork(a: Int) = if (a >= 0) println("Number is positive") else println("Number is negative")
 
 fun thirdHomeWork(a: Int): Boolean {
     var isNegative = true
@@ -41,15 +37,12 @@ fun thirdHomeWork(a: Int): Boolean {
 }
 
 fun forthHomeWork(s: String, a: Int) {
-    for (i in 1..a)
+    for (i in 0 until a)
         println(s)
 }
 
 
-fun fifthHomeWork(year: Int) {
-    if (year % 4 != 0 || year % 100 == 0 && year % 400 != 0)
-        println("Year is not leap")
-    else {
-        println("Year is leap")
-    }
-}
+fun fifthHomeWork(year: Int) = if (year % 4 != 0 || year % 100 == 0 && year % 400 != 0)
+    println("Year is not leap") else println("Year is leap")
+
+

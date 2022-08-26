@@ -21,33 +21,6 @@ fun main() {
 
 }
 
-fun moveArray(array: IntArray, n: Int) {
-    println("Here is array - ${array.asList()} need to move it on $n elements")
-    val number = n % array.size
-    if (number >= 0) {
-        for (i in 0 until  number) {
-            val num = array[array.size - 1]
-            var j = array.size - 1
-            do{
-                array[j] = array[j - 1]
-                j--
-            } while (j > 0)
-            array[0] = num
-        }
-    } else {
-        for (i in number until 0) {
-            val num = array[0]
-            var j = 0
-            do{
-                array[j] = array[j + 1]
-                j++
-            } while (j < array.size - 1)
-            array[array.size - 1] = num
-        }
-    }
-    println(array.asList())
-}
-
 fun invertArray() {
     var arr = intArrayOf(1, 0, 1, 1, 0, 0, 1, 0, 1, 0, 1, 1, 1)
     println("${arr.asList()} - normal array")
@@ -126,4 +99,31 @@ fun arraBalance(array: IntArray): Boolean {
     }
     println("Left and right parts are not equal")
     return false
+}
+
+fun moveArray(array: IntArray, n: Int) {
+    println("Here is array - ${array.asList()} need to move it on $n elements")
+    val number = n % array.size
+    if (number >= 0) {
+        for (i in 0 until number) {
+            val num = array[array.size - 1]
+            var j = array.size - 1
+            do {
+                array[j] = array[j - 1]
+                j--
+            } while (j > 0)
+            array[0] = num
+        }
+    } else {
+        for (i in number until 0) {
+            val num = array[0]
+            var j = 0
+            do {
+                array[j] = array[j + 1]
+                j++
+            } while (j < array.size - 1)
+            array[array.size - 1] = num
+        }
+    }
+    println(array.asList())
 }
